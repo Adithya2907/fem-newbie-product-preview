@@ -1,0 +1,130 @@
+:root {
+  --clr-bg: hsl(30, 38%, 92%);
+  --clr-accent: hsl(158, 36%, 37%);
+  --clr-accent-dark: #1a4032;
+  --clr-body: #6c7289;
+  ---clr-white: hsl(0, 0%, 100%);
+  --clr-title: #1c232b;
+
+  --ff-mont: "Montserrat", sans-serif;
+  --ff-frau: "Fraunces", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  background-color: var(--clr-bg);
+  font-size: 0.875rem;
+  line-height: 1.4375rem;
+  color: var(--clr-body);
+  display: grid;
+  font-family: var(--ff-mont);
+  place-items: center;
+}
+
+.product {
+  display: grid;
+  max-width: 600px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+.text {
+  padding: 2rem;
+}
+
+.category {
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.product-title {
+  font-family: var(--ff-frau);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 100%;
+  color: var(--clr-title);
+  margin-bottom: 1.5rem;
+}
+
+.product-description {
+  font-weight: 500;
+}
+
+.prices {
+  margin: 1.8125rem 0 1.875rem 0;
+  display: flex;
+  gap: 1.1875rem;
+}
+
+.current-price {
+  font-family: var(--ff-frau);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 100%;
+  color: var(--clr-accent);
+}
+
+.initial-price {
+  margin: auto 0;
+}
+
+.button {
+  background: var(--clr-accent);
+  color: white;
+  font-weight: 700;
+  line-height: 100%;
+  border: none;
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 8px;
+  transition: all 0.3s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.75rem;
+}
+
+.button:is(:hover, :focus) {
+  background: var(--clr-accent-dark);
+  cursor: pointer;
+}
+
+.button::before {
+  content: "";
+  background-image: url("/images/icon-cart.svg");
+  height: 16px;
+  width: 15px;
+  display: block;
+}
+
+@media (min-width: 40em) {
+  .product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
